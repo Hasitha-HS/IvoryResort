@@ -9,7 +9,7 @@
 }
 
 html,body,#root{height:100%}
-body{@apply bg-gradient-to-br from-[#042b22] to-[#053d45] text-white antialiased}
+body{background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#ffffff;-webkit-font-smoothing:antialiased}
 
 .container{max-width:1000px;margin:0 auto;padding:1rem}
 
