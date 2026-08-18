@@ -47,6 +47,32 @@ export default function Page() {
         </div>
       </section>
 
+      <section id="bedrooms" className="container">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5D7052]">Rooms</p>
+            <h2 className="text-4xl text-[#2C2C24]">Comfortable, clean spaces for your stay</h2>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <figure className="group overflow-hidden rounded-[2rem] border border-[#DED8CF] bg-white/60">
+            <img src="/asssets/images/image-bedroom1.jpeg" alt="Private bedroom one at Ivory Resort Anuradhapura" className="h-80 w-full object-cover transition duration-500 group-hover:scale-105" />
+            <figcaption className="p-5 text-sm text-[#4A4A40]">
+              <p className="font-semibold text-[#2C2C24] mb-2">Bedroom 1</p>
+              A peaceful private bedroom with all the essentials for a restful night's sleep, furnished for comfort and simplicity.
+            </figcaption>
+          </figure>
+          <figure className="group overflow-hidden rounded-[2rem] border border-[#DED8CF] bg-white/60">
+            <img src="/asssets/images/images-bedroom2.jpeg" alt="Private bedroom two at Ivory Resort Anuradhapura" className="h-80 w-full object-cover transition duration-500 group-hover:scale-105" />
+            <figcaption className="p-5 text-sm text-[#4A4A40]">
+              <p className="font-semibold text-[#2C2C24] mb-2">Bedroom 2</p>
+              Another comfortable bedroom option, ideal for families or groups looking for a quiet retreat in Anuradhapura.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <BookingForm />
 
       <Comments />
