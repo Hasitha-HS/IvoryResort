@@ -2,19 +2,48 @@ import React from 'react'
 import BookingForm from '../components/BookingForm'
 import Comments from '../components/Comments'
 import Hero from '../components/Hero'
-import { useLanguage } from '../components/LanguageProvider'
 
 export default function Page() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 pb-16">
       <Hero />
 
-      <section className="card">
-        <h2 className="text-2xl mb-4">Gallery</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <img src="https://source.unsplash.com/600x400/?lakeside" alt="1" className="rounded" />
-          <img src="https://source.unsplash.com/600x400/?cottage" alt="2" className="rounded" />
-          <img src="https://source.unsplash.com/600x400/?nature" alt="3" className="rounded" />
+      <section id="about" className="container">
+        <div className="card p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#5D7052]">About Our Location</p>
+              <h2 className="text-4xl text-[#2C2C24]">Nestled in the heart of ancient Anuradhapura.</h2>
+            </div>
+            <p className="text-lg leading-8 text-[#4A4A40]">
+              Nestled in the historic city of Anuradhapura, Ivory Resort offers a comfortable home-away-from-home just minutes from the ancient sacred sites, stupas, and temples that make this UNESCO World Heritage city famous. Whether you&apos;re here to explore centuries-old ruins, visit the sacred Bodhi Tree, or simply unwind after a day of sightseeing, our home offers a quiet, welcoming retreat with all the comforts you need. Enjoy easy access to local restaurants, markets, and transport links while staying in a peaceful residential setting away from the crowds.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="container">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5D7052]">Moments</p>
+            <h2 className="text-4xl text-[#2C2C24]">A place that feels easy</h2>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <figure className="group overflow-hidden rounded-[2rem] border border-[#DED8CF] bg-white/60">
+            <img src="/asssets/images/images-livingarea.jpeg" alt="Comfortable shared living area at Ivory Resort Anuradhapura" className="h-72 w-full object-cover transition duration-500 group-hover:scale-105" />
+            <figcaption className="p-4 text-sm text-[#4A4A40]">A bright, welcoming living area perfect for relaxing, socializing, or catching up on plans for the next day&apos;s adventures.</figcaption>
+          </figure>
+          <figure className="group overflow-hidden rounded-[2rem] border border-[#DED8CF] bg-white/60">
+            <img src="/asssets/images/images-kitchen.jpeg" alt="Fully equipped kitchen at Ivory Resort Anuradhapura" className="h-72 w-full object-cover transition duration-500 group-hover:scale-105" />
+            <figcaption className="p-4 text-sm text-[#4A4A40]">A clean, well-equipped kitchen space where guests can prepare meals and enjoy a true home-away-from-home experience.</figcaption>
+          </figure>
+          <figure className="group overflow-hidden rounded-[2rem] border border-[#DED8CF] bg-white/60 sm:col-span-2 lg:col-span-1">
+            <img src="/asssets/images/images-garden.jpeg" alt="Green garden area surrounding Ivory Resort Anuradhapura" className="h-72 w-full object-cover transition duration-500 group-hover:scale-105" />
+            <figcaption className="p-4 text-sm text-[#4A4A40]">Step outside into a lush, tranquil garden — a peaceful spot to relax and enjoy the fresh Anuradhapura air.</figcaption>
+          </figure>
+        </div>
         </div>
       </section>
 
