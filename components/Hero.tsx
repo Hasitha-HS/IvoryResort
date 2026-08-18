@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="relative">
               <div className="absolute -right-2 top-6 h-24 w-24 rounded-full bg-[#E6DCCD] blur-2xl" />
               <img
-                src="/asssets/images/imageshome.avif"
+                src="/images/imageshome.avif"
                 alt="Exterior view of Ivory Resort home in Anuradhapura"
                 className="h-[480px] w-full rounded-[30%_70%_70%_30%/30%_30%_70%_70%] object-cover shadow-[0_20px_40px_-12px_rgba(93,112,82,0.18)]"
               />
