@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { LanguageProvider } from '../components/LanguageProvider'
 
 export const metadata = {
   title: 'Ivory Resort — Family Stay',
@@ -12,9 +13,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="container py-8">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main className="container py-8">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )

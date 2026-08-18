@@ -1,11 +1,13 @@
-'use client'
+"use client"
 import React, { useEffect, useState } from 'react'
+import { useLanguage } from './LanguageProvider'
 
 type Comment = { id: string; name: string; text: string; img?: string }
 
 export default function Comments() {
   const [comments, setComments] = useState<Comment[]>([])
   const [loggedIn, setLoggedIn] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const raw = localStorage.getItem('ir_comments')
@@ -20,8 +22,8 @@ export default function Comments() {
 
   function handleAdd() {
     if (!loggedIn) return alert('Please login to add a comment')
-    const name = prompt('Your name') || 'Guest'
-    const text = prompt('Your comment') || ''
+    const name = prompt(t('add_comment')) || 'Guest'
+    const text = prompt(t('add_comment')) || ''
     if (!text) return
     const c: Comment = { id: Date.now().toString(), name, text }
     save([c, ...comments])
@@ -41,14 +43,14 @@ export default function Comments() {
 
   return (
     <section id="comments" className="card">
-      <h2 className="text-2xl mb-4">User Comments</h2>
+      <h2 className="text-2xl mb-4">{t('user_comments')}</h2>
       <div className="flex gap-2 mb-4">
-        <button onClick={handleAdd}>Add Comment</button>
-        {!loggedIn ? <button onClick={handleLogin}>Login</button> : <button onClick={handleLogout}>Logout</button>}
+        <button onClick={handleAdd}>{t('add_comment')}</button>
+        {!loggedIn ? <button onClick={handleLogin}>{t('login')}</button> : <button onClick={handleLogout}>{t('logout')}</button>}
       </div>
 
       <div className="space-y-3">
-        {comments.length === 0 && <div className="text-gray-300">No comments yet.</div>}
+        {comments.length === 0 && <div className="text-gray-300">{t('no_comments')}</div>}
         {comments.map(c => (
           <div key={c.id} className="flex gap-3 items-start">
             <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center">{c.name[0]}</div>
