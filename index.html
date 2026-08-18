@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ivory Resort — Family Stay</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f0d6d1f2a7b8b5b6f6a" alt="Resort view" />
+      <div class="hero-text">
+        <h1>Ivory Resort</h1>
+        <p>Quiet family-friendly stay near Nuwara reservoir and Anuradhapura's attractions.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about" class="card">
+        <h2>About</h2>
+        <p>Family-owned, no-smoking property with a calm atmosphere. Very close to the main city Anuradhapura and key tourist attractions.</p>
+      </section>
+
+      <section id="gallery" class="card">
+        <h2>Images</h2>
+        <div class="gallery-grid">
+          <img src="https://source.unsplash.com/600x400/?lakeside" alt="gallery-1" />
+          <img src="https://source.unsplash.com/600x400/?nature,tree" alt="gallery-2" />
+          <img src="https://source.unsplash.com/600x400/?cottage" alt="gallery-3" />
+        </div>
+      </section>
+
+      <section id="comments" class="card">
+        <h2>User Comments</h2>
+        <div id="comments-list"></div>
+        <div class="comment-actions">
+          <button id="add-comment-btn">Add Comment</button>
+          <button id="login-btn">Login</button>
+          <button id="logout-btn" class="hidden">Logout</button>
+        </div>
+      </section>
+
+      <section id="booking" class="card">
+        <h2>Book a Stay</h2>
+        <form id="booking-form" onsubmit="return false;">
+          <label>Email<br /><input type="email" id="book-email" required /></label>
+          <label>Check-in<br /><input type="date" id="checkin" required /></label>
+          <label>Check-out<br /><input type="date" id="checkout" required /></label>
+          <div class="actions">
+            <button id="check-availability">Check availability & Price</button>
+          </div>
+        </form>
+        <div id="booking-result" class="muted"></div>
+        <div class="external-links">
+          <a href="#" target="_blank" id="booking-com">Find us on Booking.com</a>
+          <a href="#" target="_blank" id="tripadvisor">Find us on Tripadvisor</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <h3>Contact Us</h3>
+        <p>Email: info@ivoryresort.example | Phone: +94 77 123 4567</p>
+        <p class="muted">No smoking. Family friendly.</p>
+      </div>
+    </footer>
+
+    <!-- Login modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Login</h3>
+        <form id="login-form">
+          <label>Email<br /><input type="email" id="login-email" required /></label>
+          <label>Password<br /><input type="password" id="login-pass" required /></label>
+          <div class="actions">
+            <button type="submit">Login</button>
+            <button type="button" id="cancel-login">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add comment modal -->
+    <div id="comment-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Add Comment</h3>
+        <form id="comment-form">
+          <label>Your name<br /><input id="comment-name" required /></label>
+          <label>Comment<br /><textarea id="comment-text" rows="4" required></textarea></label>
+          <label>Picture (optional)<br /><input type="file" id="comment-pic" accept="image/*" /></label>
+          <div class="actions">
+            <button type="submit">Post Comment</button>
+            <button type="button" id="cancel-comment">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

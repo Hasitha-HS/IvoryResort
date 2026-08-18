@@ -1,0 +1,35 @@
+:root{
+  --bg1:#0b3d2e; /* dark green */
+  --bg2:#0b6678; /* waterish blue */
+  --card:#0f2f26aa;
+  --accent:#a9e5d3;
+  --muted:#cfe9e6aa;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,Helvetica,sans-serif;color:#eef6f4;background:linear-gradient(135deg,var(--bg1),var(--bg2));}
+.container{max-width:1000px;margin:24px auto;padding:0 16px}
+.hero{position:relative;height:320px;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;filter:brightness(0.6)}
+.hero-text{position:absolute;left:32px;bottom:24px;color:var(--accent)}
+.hero-text h1{margin:0;font-size:2.4rem}
+.card{background:rgba(255,255,255,0.03);backdrop-filter:blur(4px);padding:16px;border-radius:8px;margin:16px 0;color:#e9fbf8}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.gallery-grid img{width:100%;height:150px;object-fit:cover;border-radius:6px}
+.comment-actions{display:flex;gap:8px;margin-top:12px}
+button{background:var(--accent);border:0;padding:8px 12px;border-radius:6px;cursor:pointer}
+button.hidden{display:none}
+.site-footer{padding:18px 0;margin-top:24px;background:linear-gradient(90deg,rgba(0,0,0,0.12),transparent)}
+.muted{color:var(--muted);margin-top:8px}
+.modal{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center}
+.modal.hidden{display:none}
+.modal-content{background:#fff;color:#0a2b22;padding:16px;border-radius:8px;min-width:320px}
+.actions{margin-top:12px}
+label{display:block;margin:8px 0}
+input,textarea{width:100%;padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.1)}
+#comments-list{display:flex;flex-direction:column;gap:12px}
+.comment{display:flex;gap:12px;background:rgba(255,255,255,0.02);padding:8px;border-radius:8px}
+.avatar{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.comment-body{flex:1}
+.external-links{margin-top:12px;display:flex;gap:12px}
+a{color:var(--accent);text-decoration:underline}
+@media(max-width:600px){.hero-text{left:16px;bottom:12px}.hero{height:220px}}

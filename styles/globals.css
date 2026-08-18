@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --accent: #a9e5d3;
+  --bg1: #062c23;
+  --bg2: #0b6678;
+}
+
+html,body,#root{height:100%}
+body{@apply bg-gradient-to-br from-[#042b22] to-[#053d45] text-white antialiased}
+
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+
+.card{background:rgba(255,255,255,0.03);padding:1rem;border-radius:0.5rem}
