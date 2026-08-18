@@ -44,7 +44,6 @@ export default function Page() {
             <figcaption className="p-4 text-sm text-[#4A4A40]">Step outside into a lush, tranquil garden — a peaceful spot to relax and enjoy the fresh Anuradhapura air.</figcaption>
           </figure>
         </div>
-        </div>
       </section>
 
       <section id="bedrooms" className="container">
