@@ -4,14 +4,39 @@ import { useLanguage } from './LanguageProvider'
 
 type Comment = { id: string; name: string; text: string; img?: string }
 
+const DUMMY_COMMENTS: Comment[] = [
+  {
+    id: '1',
+    name: 'Sarah Mitchell',
+    text: 'Absolutely loved our stay at Ivory Resort! The peaceful atmosphere was exactly what we needed. The bedrooms were clean and comfortable, and the garden area was a perfect spot to relax in the evening. Highly recommend to anyone visiting Anuradhapura!',
+    img: '/images/user-avatar-1.svg'
+  },
+  {
+    id: '2',
+    name: 'Rajesh Kumar',
+    text: 'Great location and very friendly hosts. The living area was spacious and well-equipped. We had a wonderful time exploring the ancient temples and returning to this quiet retreat. Will definitely come back!',
+    img: '/images/user-avatar-2.svg'
+  },
+  {
+    id: '3',
+    name: 'Emma Thompson',
+    text: 'Perfect for a solo traveler like me. Felt safe, comfortable, and the kitchen facilities made it easy to prepare my own meals. The connection to local transport was seamless. Can\'t wait to return!',
+    img: '/images/user-avatar-3.svg'
+  }
+]
+
 export default function Comments() {
-  const [comments, setComments] = useState<Comment[]>([])
+  const [comments, setComments] = useState<Comment[]>(DUMMY_COMMENTS)
   const [loggedIn, setLoggedIn] = useState(false)
   const { t } = useLanguage()
 
   useEffect(() => {
     const raw = localStorage.getItem('ir_comments')
-    if (raw) setComments(JSON.parse(raw))
+    if (raw) {
+      setComments(JSON.parse(raw))
+    } else {
+      setComments(DUMMY_COMMENTS)
+    }
     setLoggedIn(Boolean(localStorage.getItem('ir_user')))
   }, [])
 
@@ -59,12 +84,15 @@ export default function Comments() {
         </div>
 
         <div className="space-y-5">
-          {comments.length === 0 && <div className="text-[#9A9A8A] text-sm italic py-8">{t('no_comments')}</div>}
           {comments.map(c => (
             <div key={c.id} className="flex gap-4 items-start pb-4 border-b border-[#DED8CF] last:border-b-0">
-              <div className="w-12 h-12 bg-[#C18C5D]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="font-bold text-[#C18C5D]">{c.name[0]}</span>
-              </div>
+              {c.img ? (
+                <img src={c.img} alt={c.name} className="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-[#DED8CF]" />
+              ) : (
+                <div className="w-12 h-12 bg-[#C18C5D]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="font-bold text-[#C18C5D]">{c.name[0]}</span>
+                </div>
+              )}
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-[#2C2C24]">{c.name}</div>
                 <div className="text-[#4A4A40] text-sm mt-1">{c.text}</div>
